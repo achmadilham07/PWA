@@ -1,0 +1,53 @@
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Container for flexboxes */
+.row {
+  display: -webkit-flex;
+  display: flex;
+}
+
+/* Create three equal columns that sits next to each other */
+.column {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 10px;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  .row {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+}
+</style>
+
+<h2>Hubungi Saya</h2>
+<div>
+	<div>
+		
+	</div>
+	<div class="container">
+		
+	</div>
+</div>
+
+<div class="row">
+  <div class="column">
+	<picture>
+	  <source media="(min-width: 650px)" srcset="../images/bolt_75.png">
+	  <img src="../images/bolt_50.png" alt="Flowers" style="width:auto;">
+	</picture>
+  </div>
+  <div class="column">
+	<h6>Email : achmadilham07@gmail.com</h6><hr>
+	<h6>Instagram : @achmad.ilham</h6><hr>
+	<h6>Twitter : @achmadilham07</h6><hr>
+	<h6>Facebook : Achmad Ilham</h6><hr>
+  </div>
+</div>
