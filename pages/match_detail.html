@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Detail Match</title>
+  <link rel="manifest" href="../manifest.json">
+  <meta name="theme-color" content="#00897B" />
+  <meta name="description" content="Football Information" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="shortcut icon" href="../images/icon.png">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/materialize.min.css">
+  <link rel="stylesheet" href="../css/function.css">
+
+</head>
+
+<body>
+
+  <!-- Navigasi -->
+  <nav class="blue darken-2" role="navigation">
+    <div class="nav-wrapper container">
+      <a href="#" class="brand-logo center" id="logo-container"></a>
+      <a href="javascrit:void(0)" onclick="javascript:window.history.back(-1);return false;" data-target="nav-mobile">
+        <i class="material-icons">arrow_back</i>
+      </a>
+      <ul class="topnav right hide-on-med-and-down"></ul>
+      <ul class="sidenav" id="nav-mobile"></ul>
+    </div>
+  </nav>
+  <!-- Akhir Navigasi -->
+  <div class="container">
+    <div class="row">
+      <div class="col xl12 l12 m12 s12 center-align" id="a-preloader">
+        <div class="preloader-wrapper active a-mt-3 a-mb-3">
+          <div class="spinner-layer spinner-red-only">
+            <div class="circle-clipper left">
+              <div class="circle"></div>
+            </div>
+            <div class="gap-patch">
+              <div class="circle"></div>
+            </div>
+            <div class="circle-clipper right">
+              <div class="circle"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col xl12 l12 m12 s12" id="card-team">
+        <div class="card">
+          <div class="card-image">
+            <a class="btn-floating halfway-fab waves-effect waves-light red">
+              <i id="iconFav" class="material-icons">favorite_border</i>
+            </a>
+          </div>
+          <div class="card-content center-align">
+            
+            <div class="row">
+              <div class="col xl12 l12 m12 s12">
+                <h6 id="a-matchDay"></h6>
+              </div>
+            </div>
+
+            <div class="row valign-wrapper">
+              <div class="col xl5 l5 m5 m5">
+                <h5 id="a-homeTeamName"></h5>
+              </div>
+              <div class="col xl2 l2 m2 m2">
+                <h5 id="a-scoreOrVs"></h5>
+              </div>
+              <div class="col xl5 l5 m5 m5">
+                <h5 id="a-awayTeamName"></h5>
+              </div>
+            </div>
+
+            <div class="row clear-padding-heading">
+              <div class="col xl12 l12 m12 s12">
+                <h6 id="a-competitionName"></h6>
+              </div>
+            </div>
+
+            <div class="row clear-padding-heading">
+              <div class="col xl12 l12 m12 s12">
+                <h6 id="a-venue"></h6>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="card-action center-align">
+          
+            <div class="row">
+              <div class="col xl12 l12 m12 s12">
+                <h6 class=" clear-padding-heading"><strong>Head to Head</strong></h6>
+              </div>
+            </div>
+          
+            <div class="row">
+              <div class="col xl12 l12 m12 s12">
+                <h6 id="a-numberOfMatches" class=" clear-padding-heading"></h6>
+              </div>
+            </div>
+          
+            <div class="row valign-wrapper clear-padding-heading">
+              <div class="col xl5 l5 m5 s5">
+                <h5 id="a-homeTeamWins" class=" clear-padding-heading"></h5>
+              </div>
+              <div class="col xl2 l2 m2 m2">
+                <h6><strong>WINS</strong></h6>
+              </div>
+              <div class="col xl5 l5 m5 s5">
+                <h5 id="a-awayTeamWins" class=" clear-padding-heading"></h5>
+              </div>
+            </div>
+          
+            <div class="row valign-wrapper clear-padding-heading">
+              <div class="col xl5 l5 m5 s5">
+                <h5 id="a-homeTeamDraws" class=" clear-padding-heading"></h5>
+              </div>
+              <div class="col xl2 l2 m2 m2">
+                <h6><strong>DRAW</strong></h6>
+              </div>
+              <div class="col xl5 l5 m5 s5">
+                <h5 id="a-awayTeamDraws" class=" clear-padding-heading"></h5>
+              </div>
+            </div>
+          
+            <div class="row valign-wrapper clear-padding-heading">
+              <div class="col xl5 l5 m5 s5">
+                <h5 id="a-homeTeamLosses" class=" clear-padding-heading"></h5>
+              </div>
+              <div class="col xl2 l2 m2 m2">
+                <h6><strong>LOSSES</strong></h6>
+              </div>
+              <div class="col xl5 l5 m5 s5">
+                <h5 id="a-awayTeamLosses" class=" clear-padding-heading"></h5>
+              </div>
+            </div>
+          
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/materialize.min.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/db_football.js"></script>
+  <script src="../js/idb.js"></script>
+  <script src="../js/function.js"></script>
+
+  <script src="../js/match_detail.js"></script>
+  <script src="../js/match_detail_check.js"></script>
+
+  <script>
+    // REGISTER SERVICE WORKER
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", function () {
+        navigator.serviceWorker
+          .register("/service-worker.js")
+          .then(function () {
+            console.log("Pendaftaran ServiceWorker berhasil");
+          })
+          .catch(function () {
+            console.log("Pendaftaran ServiceWorker gagal");
+          });
+      });
+    } else {
+      console.log("ServiceWorker belum didukung browser ini.");
+    }
+    
+    var urlParams = new URLSearchParams(window.location.search);
+    var typedParam = urlParams.get("typed");
+    document.getElementById('logo-container').innerHTML = typedParam + " Match"
+
+  </script>
+</body>
+
+</html>

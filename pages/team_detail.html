@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>Detail Team</title>
+	<link rel="manifest" href="../manifest.json">
+	<meta name="theme-color" content="#00897B" />
+	<meta name="description" content="Football Information" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="shortcut icon" href="../images/icon.png">
+
+	<link rel="stylesheet" href="../css/materialize.min.css">
+	<link rel="stylesheet" href="../css/function.css">
+</head>
+
+<body>
+
+	<!-- Navigasi -->
+	<nav class="blue darken-2" role="navigation">
+		<div class="nav-wrapper container">
+			<a href="#" class="brand-logo center" id="logo-container">Football Team</a>
+			<a href="javascrit:void(0)" onclick="javascript:window.history.back(-1);return false;" data-target="nav-mobile">
+				<i class="material-icons">arrow_back</i>
+			</a>
+			<ul class="topnav right hide-on-med-and-down"></ul>
+			<ul class="sidenav" id="nav-mobile"></ul>
+		</div>
+	</nav>
+	<!-- Akhir Navigasi -->
+	<div class="container">
+		<div class="row">
+			<div class="col xl12 l12 m12 s12 center-align" id="a-preloader">
+				<div class="preloader-wrapper active a-mt-3 a-mb-3">
+					<div class="spinner-layer spinner-red-only">
+						<div class="circle-clipper left">
+							<div class="circle"></div>
+						</div>
+						<div class="gap-patch">
+							<div class="circle"></div>
+						</div>
+						<div class="circle-clipper right">
+							<div class="circle"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col xl12 l12 m12 s12" id="card-team">
+				<div class="card">
+					<div class="card-image">
+						<a class="btn-floating halfway-fab waves-effect waves-light red">
+							<i id="iconFav" class="material-icons">favorite_border</i>
+						</a>
+					</div>
+					<div class="card-content">
+
+						<div class="row valign-wrapper">
+							<div class="col s2">
+								<img alt="" class="circle responsive-img" align="center" width="150" height="150" id="a-logoklub">
+							</div>
+							<div class="col s10">
+								<h5 class="blue-text" id="a-namaklub"></h5>
+							</div>
+						</div>
+						
+						<div class="row clear-padding-heading">
+							<div class="col xl2 l2 m2 s2"><h6 class="grey-text">Name</h6></div>
+							<div class="col xl10 l10 m10 s10"><h6 class="black-text " id="a-name"></h6></div>
+						</div>
+
+						<div class="row clear-padding-heading">
+							<div class="col xl2 l2 m2 s2"><h6 class="grey-text">Address</h6></div>
+							<div class="col xl10 l10 m10 s10"><h6 class="black-text " id="a-address"></h6></div>
+						</div>
+						
+						<div class="row clear-padding-heading">
+							<div class="col xl2 l2 m2 s2"><h6 class="grey-text">Phone</h6></div>
+							<div class="col xl10 l10 m10 s10"><h6 class="black-text " id="a-phone"></h6></div>
+						</div>
+						
+						<div class="row clear-padding-heading">
+							<div class="col xl2 l2 m2 s2"><h6 class="grey-text">Website</h6></div>
+							<div class="col xl10 l10 m10 s10" id="a-website"></div>
+						</div>
+						
+						<div class="row clear-padding-heading">
+							<div class="col xl2 l2 m2 s2"><h6 class="grey-text">Email</h6></div>
+							<div class="col xl10 l10 m10 s10" id="a-email"></div>
+						</div>
+
+						<div class="row clear-padding-heading">
+							<div class="col xl2 l2 m2 s2"><h6 class="grey-text">Venue</h6></div>
+							<div class="col xl10 l10 m10 s10"><h6 class="black-text " id="a-venue"></h6></div>
+						</div>
+
+						<div class="row "></div>
+						<div class="row "></div>
+
+						<div class="row valign-wrapper clear-padding-heading">
+							<div class="col x1 l1 m1 s1 right-align valign-wrapper clear-padding-heading"><i class="material-icons">arrow_forward</i></div>
+							<div id="link-to-next" class="col x11 l11 m11 s11 left-align valign-wrapper clear-padding-heading"></div>
+						</div>
+						
+						
+					</div>
+					<div class="card-action">
+						
+						<div class="row">
+							<div class="col x12 l12 m12 s12 center-align">
+								<h5>Squad</h5>
+							</div>
+							
+							<div id="squad" class="col x12 l12 m12 s12"></div>
+
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="../js/materialize.min.js"></script>
+	<script src="../js/api.js"></script>
+	<script src="../js/db_football.js"></script>
+	<script src="../js/idb.js"></script>
+	<script src="../js/function.js"></script>
+	
+	<script src="../js/team_detail.js"></script>
+	<script src="../js/team_detail_check.js"></script>
+
+	<script>
+		// REGISTER SERVICE WORKER
+		if ("serviceWorker" in navigator) {
+			window.addEventListener("load", function () {
+				navigator.serviceWorker
+					.register("/service-worker.js")
+					.then(function () {
+						console.log("Pendaftaran ServiceWorker berhasil");
+					})
+					.catch(function () {
+						console.log("Pendaftaran ServiceWorker gagal");
+					});
+			});
+		} else {
+			console.log("ServiceWorker belum didukung browser ini.");
+		}
+
+
+	</script>
+</body>
+
+</html>

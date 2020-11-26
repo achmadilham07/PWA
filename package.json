@@ -1,0 +1,19 @@
+{
+  "name": "dicoding_pwa_football",
+  "version": "1.0.0",
+  "description": "Aplikasi Football PWA - Dicoding PWA",
+  "main": "service-worker.js",
+  "dependencies": {
+    "idb": "^2.1.3",
+    "web-push": "^3.4.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "football"
+  ],
+  "author": "Achmad Ilham I",
+  "license": "ISC"
+}
