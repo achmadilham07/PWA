@@ -28,7 +28,7 @@ function getUpcomingMatchesJson(data) {
                 </div>
 
                 <div class="row">
-                  <div class="col s12"><h7 class="clear-padding-heading">Date : <strong>${convertDate(new Date(upcoming.utcDate))}</strong></h7></div>
+                  <div class="col s12"><h7 class="clear-padding-heading">Datetime : <strong>${convertDate(new Date(upcoming.utcDate))}</strong></h7></div>
                 </div>
 
               </div>

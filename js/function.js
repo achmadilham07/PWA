@@ -106,6 +106,7 @@ function createDataFav(dataType, data) {
             awayTeam: data.match.score.fullTime.awayTeam
           }
         },
+        utcDate: data.match.utcDate,
         status: data.match.status,
         competition: {
           name: data.match.competition.name

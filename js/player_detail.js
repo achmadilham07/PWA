@@ -10,24 +10,33 @@ function getDetailPlayerTeamByIdJson(data) {
 
 function resultPlayerFav(data) {
   var dataPlayerFavHtml = ''
-  data.forEach(function (player) {
-    dataPlayerFavHtml += `
 
-     <div class="col xl6 l6 m12 s12">
-        <a class="black-text" href="./pages/player_detail.html?id=${player.id}&name_team=${player.name}">
-          <div class="card hoverable">
-            <div class="card-content blue lighten-5">
-              <div center-align>
-                <h5 class="center-align black-text">
-                  ${player.name}
-                </h5>          
+  if (data.length != 0) {
+    data.forEach(function (player) {
+      dataPlayerFavHtml += `
+
+      <div class="col xl6 l6 m12 s12">
+          <a class="black-text" href="./pages/player_detail.html?id=${player.id}&name_team=${player.name}">
+            <div class="card hoverable">
+              <div class="card-content blue lighten-5">
+                <div center-align>
+                  <h5 class="center-align black-text">
+                    ${player.name}
+                  </h5>          
+                </div>
               </div>
             </div>
-          </div>
-        </a>
+          </a>
+        </div>
+      `
+    });
+  } else {
+    dataPlayerFavHtml = `
+      <div class="col xl12 l12 m12 s12 center-align">
+        <h5>No Favorite Player</h5>
       </div>
-    `
-  });
+    `;
+  }
 
   document.getElementById("a-favorit-load").innerHTML = dataPlayerFavHtml;
 }

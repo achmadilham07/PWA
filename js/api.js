@@ -119,7 +119,6 @@ function getDetailTeamById() {
       caches.match(url).then(function (response) {
         if (response) {
           response.json().then(function (data) {
-            console.log(data);
             getDetailTeamByIdJson(data);
             setTableSquad(data);
             resolve(data);
@@ -162,7 +161,6 @@ function getDetailPlayerTeamById() {
       caches.match(url).then(function (response) {
         if (response) {
           response.json().then(function (data) {
-            console.log(data);
             getDetailPlayerTeamByIdJson(data);
             
             resolve(data);

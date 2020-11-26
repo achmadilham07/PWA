@@ -34,7 +34,6 @@ var urlsToCache = [
 	"/js/match_detail_check.js",
 	"/js/match_detail.js",
 	"/js/match_latest.js",
-	"/js/match_league.js",
 	"/js/match_standing.js",
 	"/js/match_upcoming.js",
 	"/js/materialize.js",
