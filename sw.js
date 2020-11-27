@@ -14,6 +14,7 @@ workbox.precaching.precacheAndRoute(
     { url: '/nav.html', revision: '1'},
     { url: '/package.json', revision: '1'},
     { url: '/push.js', revision: '1'},
+    { url: '/sw.js', revision: '1'},
     { url: '/css/function.css', revision: '1'},
     { url: '/css/materialize.css', revision: '1'},
     { url: '/css/materialize.min.css', revision: '1'},
