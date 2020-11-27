@@ -38,6 +38,7 @@ workbox.precaching.precacheAndRoute(
     { url: '/js/db.js', revision: '1'},
     { url: '/js/function.js', revision: '1'},
     { url: '/js/idb.js', revision: '1'},
+    { url: '/js/load-sw.js', revision: '1'},
     { url: '/js/match_detail_check.js', revision: '1'},
     { url: '/js/match_detail.js', revision: '1'},
     { url: '/js/match_latest.js', revision: '1'},
