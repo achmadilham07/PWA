@@ -112,9 +112,9 @@ function getStandingMatches() {
 // Get Detail Team By ID
 function getDetailTeamById() {
   return new Promise(function (resolve, reject) {
-    var urlParams = new URLSearchParams(window.location.search);
-    var idParam = urlParams.get("id");
-    var url = to_teams + idParam;
+    let urlParams = new URLSearchParams(window.location.search);
+    let idParam = urlParams.get("id");
+    let url = to_teams + idParam;
     if ("caches" in window) {
       caches.match(url).then(function (response) {
         if (response) {
@@ -142,8 +142,8 @@ function getDetailTeamById() {
 // Show Latest and Upcoming Matches By ID
 function getLatestAndUpcomingMatchesById() {
   return new Promise(function (resolve, reject) {
-    var urlParams = new URLSearchParams(window.location.search);
-    var idParam = urlParams.get("id");
+    let urlParams = new URLSearchParams(window.location.search);
+    let idParam = urlParams.get("id");
     getLatestMatches(idParam);
     getUpcomingMatches(idParam);
     
@@ -153,9 +153,9 @@ function getLatestAndUpcomingMatchesById() {
 // Get Detail Player Team By ID
 function getDetailPlayerTeamById() {
   return new Promise(function (resolve, reject) {
-    var urlParams = new URLSearchParams(window.location.search);
-    var idParam = urlParams.get("id");
-    var url = to_players + idParam;
+    let urlParams = new URLSearchParams(window.location.search);
+    let idParam = urlParams.get("id");
+    let url = to_players + idParam;
 
     if ("caches" in window) {
       caches.match(url).then(function (response) {
@@ -184,8 +184,8 @@ function getDetailPlayerTeamById() {
 // Get Detail Match By ID
 function getDetailMatchById() {
   return new Promise(function (resolve, reject) {
-    var urlParams = new URLSearchParams(window.location.search);
-    var idParam = urlParams.get("id");
+    let urlParams = new URLSearchParams(window.location.search);
+    let idParam = urlParams.get("id");
     
     if ('caches' in window) {
       caches.match(to_matchs + idParam).then(function (response) {

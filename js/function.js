@@ -57,7 +57,7 @@ function deleteDatafav(storeName, data) {
 function createDataFav(dataType, data) {
   var storeName = "";
   var dataToCreate = {}
-  if (dataType == "team") {
+  if (dataType === "team") {
     storeName = "team_favorit"
     dataToCreate = {
       id: data.id,
@@ -70,7 +70,7 @@ function createDataFav(dataType, data) {
       venue: data.venue,
       squad: data.squad
     }
-  } else if (dataType == "player") {
+  } else if (dataType === "player") {
     storeName = "player_favorit";
     dataToCreate = {
       id: data.id,
@@ -80,7 +80,7 @@ function createDataFav(dataType, data) {
       nationality: data.nationality,
       position: data.position
     }
-  } else if (dataType == "match") {
+  } else if (dataType === "match") {
     storeName = "match_favorit"
     dataToCreate = {
       id: data.match.id,
@@ -140,19 +140,19 @@ function createDataFav(dataType, data) {
 }
 
 function getSavedDataById(dataType) {
-  var urlParams = new URLSearchParams(window.location.search);
-  var idParam = Number(urlParams.get("id"));
+  let urlParams = new URLSearchParams(window.location.search);
+  let idParam = Number(urlParams.get("id"));
 
-  if (dataType == "team") {
+  if (dataType === "team") {
     getDataById("team_favorit", idParam).then(function (team) {
       getDetailTeamByIdJson(team)
       setTableSquad(team)
     })
-  } else if (dataType == "player") {
+  } else if (dataType === "player") {
     getDataById("player_favorit", idParam).then(function (player) {
       getDetailPlayerTeamByIdJson(player);
     });
-  } else if (dataType == "match") {
+  } else if (dataType === "match") {
     getDataById("match_favorit", idParam).then(function (match) {
       getDetailMatchByIdJSON(match);
     });
@@ -174,15 +174,15 @@ function getDataById(storeName, id) {
 }
 
 function readDataFavHtml(dataType) {
-  if (dataType == "fav-team") {
+  if (dataType === "fav-team") {
     getAllData("team_favorit").then(function (data) {
       resultTeamFav(data);
     });
-  } else if (dataType == "fav-player") {
+  } else if (dataType === "fav-player") {
     getAllData("player_favorit").then(function (data) {
       resultPlayerFav(data);
     });
-  } else if (dataType == "fav-match") {
+  } else if (dataType === "fav-match") {
     getAllData("match_favorit").then(function (data) {
       resultMatchFav(data);
     });

@@ -20,3 +20,9 @@
 .tabs .indicator {
     background-color:#000;
 } /*Color of underline*/
+
+@media only screen and (max-width: 600px) {
+    nav .brand-logo {
+        font-size:4vw;
+    }
+}

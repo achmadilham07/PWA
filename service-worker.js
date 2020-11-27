@@ -11,20 +11,20 @@ var urlsToCache = [
 	"/css/function.css",
 	"/css/materialize.css",
 	"/css/materialize.min.css",
-	"/images/android-icon-192x192-dunplab-manifest-20405.jpg",
-	"/images/apple-icon-57x57-dunplab-manifest-20405.jpg",
-	"/images/apple-icon-60x60-dunplab-manifest-20405.jpg",
-	"/images/apple-icon-72x72-dunplab-manifest-20405.jpg",
-	"/images/apple-icon-76x76-dunplab-manifest-20405.jpg",
-	"/images/apple-icon-114x114-dunplab-manifest-20405.jpg",
-	"/images/apple-icon-120x120-dunplab-manifest-20405.jpg",
-	"/images/apple-icon-144x144-dunplab-manifest-20405.jpg",
-	"/images/apple-icon-152x152-dunplab-manifest-20405.jpg",
-	"/images/apple-icon-180x180-dunplab-manifest-20405.jpg",
-	"/images/favicon-16x16-dunplab-manifest-20405.jpg",
-	"/images/favicon-32x32-dunplab-manifest-20405.jpg",
-	"/images/favicon-96x96-dunplab-manifest-20405.jpg",
-	"/images/icon-512.jpg",
+	"/images/android-icon-192x192-dunplab-manifest-26227.png",
+	"/images/apple-icon-57x57-dunplab-manifest-26227.png",
+	"/images/apple-icon-60x60-dunplab-manifest-26227.png",
+	"/images/apple-icon-72x72-dunplab-manifest-26227.png",
+	"/images/apple-icon-76x76-dunplab-manifest-26227.png",
+	"/images/apple-icon-114x114-dunplab-manifest-26227.png",
+	"/images/apple-icon-120x120-dunplab-manifest-26227.png",
+	"/images/apple-icon-144x144-dunplab-manifest-26227.png",
+	"/images/apple-icon-152x152-dunplab-manifest-26227.png",
+	"/images/apple-icon-180x180-dunplab-manifest-26227.png",
+	"/images/favicon-16x16-dunplab-manifest-26227.png",
+	"/images/favicon-32x32-dunplab-manifest-26227.png",
+	"/images/favicon-96x96-dunplab-manifest-26227.png",
+	"/images/icon-512.png",
 	"/images/icon.png",
 	"/js/api.js",
 	"/js/db_football.js",
@@ -82,24 +82,6 @@ self.addEventListener("fetch", function (event) {
 			})
 		)
 	}
-	// event.respondWith(
-	// 	caches
-	// 		.match(event.request, {
-	// 			cacheName: CACHE_NAME
-	// 		})
-	// 		.then(function (response) {
-	// 			if (response) {
-	// 				console.log("ServiceWorker: Gunakan aset dari cache: ", response.url);
-	// 				return response;
-	// 			}
-
-	// 			console.log(
-	// 				"ServiceWorker: Memuat aset dari server: ",
-	// 				event.request.url
-	// 			);
-	// 			return fetch(event.request);
-	// 		})
-	// );
 });
 
 self.addEventListener("activate", function(event) {
@@ -126,7 +108,7 @@ self.addEventListener('push', function (event) {
 	}
 	var options = {
 		body: body,
-		icon: './images/icon-512.jpg',
+		icon: './images/icon-512.png',
 		vibrate: [100, 50, 100],
 		data: {
 			dateOfArrival: Date.now(),

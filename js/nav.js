@@ -28,14 +28,17 @@ document.addEventListener("DOMContentLoaded", function () {
 					readDataFavHtml(typeFavorit);
 				}
 				
-				// ---
-
-				if (this.status == 200) {
-					content.innerHTML = xhttp.responseText;
-				} else if (this.status == 404) {
-					content.innerHTML = `<p>Halaman tidak ditemukan. ${page}</p>`;
-				} else {
-					content.innerHTML = "<p>Ups.. halaman tidak dapat diakses.</p>";
+				
+				switch (this.status) {
+					case 200:
+						content.innerHTML = xhttp.responseText;
+						break;
+					case 404:
+						content.innerHTML = `<p>Halaman tidak ditemukan. ${page}</p>`;
+						break;
+					default:
+						content.innerHTML = "<p>Ups.. halaman tidak dapat diakses.</p>";
+						break;
 				}
 			}
 		};
