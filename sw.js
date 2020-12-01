@@ -57,7 +57,8 @@ workbox.precaching.precacheAndRoute(
     { url: '/pages/latest_upcoming_match.html', revision: '1'},
     { url: '/pages/match_detail.html', revision: '1'},
     { url: '/pages/player_detail.html', revision: '1'},
-    { url: '/pages/team_detail.html', revision: '1' }
+    { url: '/pages/team_detail.html', revision: '1' },
+    { url: 'https://fonts.googleapis.com/icon?family=Material+Icons', revision: '1' },
   ], {
     ignoreUrlParametersMatching: [/.*/]
   }
@@ -78,7 +79,7 @@ workbox.routing.registerRoute(
 );
 
 workbox.routing.registerRoute(
-  /\.(?:png|gif|jpg|jpeg|svg)$/,
+  /\.(?:png|jpg|jpeg|svg|gif|webp|ico|webmanifest|eot,ttf,woff,woff2)$/,
   workbox.strategies.staleWhileRevalidate({
     plugins: [
       new workbox.expiration.Plugin({
@@ -109,6 +110,17 @@ workbox.routing.registerRoute(
         maxEntries: 30,
       }),
     ]
+  })
+);
+
+workbox.routing.registerRoute(
+  'https://fonts.googleapis.com/(.*)',
+  workbox.strategies.cacheFirst({
+    cacheName: 'googleapis',
+    cacheExpiration: {
+      maxEntries: 20
+    },
+    cacheableResponse: { statuses: [0, 200] }
   })
 );
 

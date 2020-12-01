@@ -41,15 +41,6 @@ function error(error) {
 // Get Latest Matches
 function getLatestMatches(id ='86') {
   to_latest_matches = to_latest_matches.replace('$id', id)
-  if ('caches' in window) {
-    caches.match(to_latest_matches).then(function (response) {
-      if (response) {
-        response.json().then(function (data) {
-          getLatestMatchesJson(data);
-        });
-      }
-    });
-  }
 
   fetch_api(to_latest_matches)
     .then(status)
@@ -66,15 +57,6 @@ function getLatestMatches(id ='86') {
 // Get Upcoming Matches
 function getUpcomingMatches(id = '86') {
   to_upcoming_matches = to_upcoming_matches.replace('$id', id)
-  if ('caches' in window) {
-    caches.match(to_upcoming_matches).then(function (response) {
-      if (response) {
-        response.json().then(function (data) {
-          getUpcomingMatchesJson(data);
-        });
-      }
-    });
-  }
 
   fetch_api(to_upcoming_matches)
     .then(status)
@@ -90,15 +72,6 @@ function getUpcomingMatches(id = '86') {
 
 // Get Standing Matches
 function getStandingMatches() {
-  if ('caches' in window) {
-    caches.match(to_standing_matches).then(function (response) {
-      if (response) {
-        response.json().then(function (data) {
-          getStandingMatchesJson(data);
-        });
-      }
-    });
-  }
 
   fetch_api(to_standing_matches)
     .then(status)
@@ -115,17 +88,6 @@ function getDetailTeamById() {
     let urlParams = new URLSearchParams(window.location.search);
     let idParam = urlParams.get("id");
     let url = to_teams + idParam;
-    if ("caches" in window) {
-      caches.match(url).then(function (response) {
-        if (response) {
-          response.json().then(function (data) {
-            getDetailTeamByIdJson(data);
-            setTableSquad(data);
-            resolve(data);
-          });
-        }
-      });
-    }
 
     fetch_api(url)
       .then(status)
@@ -186,17 +148,7 @@ function getDetailMatchById() {
   return new Promise(function (resolve, reject) {
     let urlParams = new URLSearchParams(window.location.search);
     let idParam = urlParams.get("id");
-    
-    if ('caches' in window) {
-      caches.match(to_matchs + idParam).then(function (response) {
-        if (response) {
-          response.json().then(function (data) {
-            getDetailMatchByIdJSON(data);
-            resolve(data)
-          });
-        }
-      });
-    }
+
     fetch_api(to_matchs + idParam)
       .then(status)
       .then(json)
